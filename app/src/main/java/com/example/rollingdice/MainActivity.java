@@ -64,5 +64,30 @@ public class MainActivity extends AppCompatActivity {
         int number = r.nextInt(10);
 
         tv.setText(Integer.toString(number));
+
+
+        //Level 2
+
+        TextView InputBox = this.findViewById(R.id.InputBox1);
+        String UserInput;
+        UserInput = InputBox.getText().toString();
+
+        int UsersNumber;
+        UsersNumber = Integer.parseInt(UserInput);
+
+        if (UsersNumber == number) {
+
+            TextView OutputMsg = this.findViewById(R.id.Response);
+            OutputMsg.setText("Well Done");
+        }
+        else {
+            TextView OutputMsg = this.findViewById(R.id.Response);
+            OutputMsg.setText("You Lose!");
+        }
+
+
+
+
     }
+
 }
