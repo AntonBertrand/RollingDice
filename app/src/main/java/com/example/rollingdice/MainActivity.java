@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    int score = 0;
+
     public void on_button_click(View view){
 
         TextView tv = this.findViewById(R.id.numberTextView);
@@ -73,19 +75,26 @@ public class MainActivity extends AppCompatActivity {
         UserInput = InputBox.getText().toString();
 
         int UsersNumber;
-        UsersNumber = Integer.parseInt(UserInput);
+        UsersNumber = Integer.parseInt(UserInput);  //Turns the Usersinput into an integer
+
+        //Level 3
+
+        TextView UserScore = this.findViewById(R.id.ScoreBox);
+
 
         if (UsersNumber == number) {
 
             TextView OutputMsg = this.findViewById(R.id.Response);
             OutputMsg.setText("Well Done");
+            score = score + 1;
         }
         else {
             TextView OutputMsg = this.findViewById(R.id.Response);
             OutputMsg.setText("You Lose!");
         }
 
-
+        TextView ScoreBox = this.findViewById(R.id.ScoreBox);
+        ScoreBox.setText("You Score Is " + score);
 
 
     }
