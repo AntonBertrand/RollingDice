@@ -58,14 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
     int score = 0;
 
-    public void on_button_click(View view){
+    public void on_button_click(Integer DiceNum) {
 
         TextView tv = this.findViewById(R.id.numberTextView);
 
-        Random r = new Random();
-        int number = r.nextInt(10);
 
-        tv.setText(Integer.toString(number));
+        tv.setText(Integer.toString(DiceNum));
 
 
         //Level 2
@@ -82,13 +80,12 @@ public class MainActivity extends AppCompatActivity {
         TextView UserScore = this.findViewById(R.id.ScoreBox);
 
 
-        if (UsersNumber == number) {
+        if (UsersNumber == DiceNum) {
 
             TextView OutputMsg = this.findViewById(R.id.Response);
             OutputMsg.setText("Well Done");
             score = score + 1;
-        }
-        else {
+        } else {
             TextView OutputMsg = this.findViewById(R.id.Response);
             OutputMsg.setText("You Lose!");
         }
@@ -99,4 +96,63 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+    public void roll_the_dice(View view) {
+
+        Random r = new Random();
+        int DiceNum = r.nextInt(6);
+
+            switch(view.getId())
+            {
+                case R.id.button:
+                        on_button_click(DiceNum);
+                    break;
+                case R.id.Icebreakers:
+                        icebreaker_method(DiceNum);
+                    break;
+                default:
+                    throw new RuntimeException("Unknown button ID");
+            }
+
+        }
+
+
+        public void icebreaker_method (Integer DiceNum) {
+
+
+            TextView OutputMsg = this.findViewById(R.id.numberTextView);
+
+            switch (DiceNum) {
+                case 1:
+
+                    OutputMsg.setText("If you could go anywhere in the world, where would you go?");
+                    break;
+                case 2:
+
+                    OutputMsg.setText("If you were stranded on a desert island, what three things would you want to take with you?");
+                    break;
+                case 3:
+
+                    OutputMsg.setText("If you could eat only one food for the rest of your life, what would that be?");
+                    break;
+                case 4:
+
+                    OutputMsg.setText("If you won a million dollars, what is the first thing you would buy?");
+                    break;
+                case 5:
+                    OutputMsg.setText("If you could spaned the day with one fictional character, who would it be?");
+                    break;
+                case 6:
+
+                    OutputMsg.setText("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
+                    break;
+
+                default:
+                    OutputMsg.setText("Error");
+                    throw new IllegalStateException("Unexpected value: " + DiceNum);
+        }
+
+
+    }
 }

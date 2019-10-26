@@ -25,9 +25,9 @@
         android:layout_width="196dp"
         android:layout_height="86dp"
         android:layout_marginBottom="160dp"
-        android:onClick="on_button_click"
-        android:text="Roll Dice"
-        android:textSize="30sp"
+        android:onClick="roll_the_dice"
+        android:text="I Am Feeling Lucky"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.429"
@@ -66,7 +66,19 @@
         android:layout_height="wrap_content"
         android:text="Your Score"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="3dp" />
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="-5dp" />
+
+    <Button
+        android:id="@+id/Icebreakers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="roll_the_dice"
+        android:text="Let's play D-ICEBREAKERS"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
