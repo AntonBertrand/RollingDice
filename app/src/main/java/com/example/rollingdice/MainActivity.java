@@ -122,11 +122,14 @@ public class MainActivity extends AppCompatActivity {
 
 
             TextView OutputMsg = this.findViewById(R.id.numberTextView);
+            TextView OutputMsg2 = this.findViewById(R.id.Response);
+            OutputMsg2.setText("");
 
             switch (DiceNum) {
                 case 1:
 
                     OutputMsg.setText("If you could go anywhere in the world, where would you go?");
+
                     break;
                 case 2:
 
